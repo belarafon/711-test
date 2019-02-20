@@ -1,0 +1,63 @@
+.promo {
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+
+        @media screen and (min-width: $screen-md-min) {
+           flex-wrap: nowrap;
+            flex-direction: row;
+        }
+    }
+
+    &__col {
+        width: 50%;
+        display: inline-flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        z-index: 2;
+
+        @media screen and (min-width: $screen-md-min) {
+            flex-wrap: nowrap;
+            flex-direction: row;
+        }
+
+        &--left {
+            z-index: 1;
+        }
+
+        &--right {
+            z-index: 1;
+        }
+    }
+
+    &__image {
+        display: block;
+    }
+
+    &__col--right &__image {
+        order: -1;
+    }
+
+    &__btn {
+        display: flex;
+        align-items: center;
+
+        &-icon {
+            display: block;
+            width: 6px;
+            height: 10px;
+            color: inherit;
+            margin-left: 25px;
+
+            svg {
+                display: block;
+                max-width: 100%;
+                fill: currentColor;
+                color: currentColor;
+            }
+        }
+    }
+}
