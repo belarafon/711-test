@@ -1,0 +1,29 @@
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    color: $link-color;
+    border: 0;
+    font-size: 1.14rem;
+    letter-spacing: 0.98px;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 20px 30px;
+    transition: 0.2s all ease;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &-primary {
+        border-top: 1px solid $btn-primary-color;
+        color: $btn-primary-color;
+        background-image: linear-gradient(to bottom, $btn-primary-color 0%, $btn-primary-color 50%, transparent 50%, transparent 100%);
+        background-position: 0 -100%;
+        background-size: 100% 200%;
+
+        &:hover {
+            color: #fff;
+            background-position: 0 -200%;
+        }
+    }
+}

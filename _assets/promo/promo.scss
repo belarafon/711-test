@@ -5,7 +5,7 @@
         flex-direction: column;
 
         @media screen and (min-width: $screen-md-min) {
-           flex-wrap: nowrap;
+            flex-wrap: nowrap;
             flex-direction: row;
         }
     }
@@ -25,11 +25,12 @@
         }
 
         &--left {
-            z-index: 1;
+            z-index: 2;
         }
 
         &--right {
             z-index: 1;
+            text-align: right;
         }
     }
 
@@ -42,7 +43,7 @@
     }
 
     &__btn {
-        display: flex;
+        display: inline-flex;
         align-items: center;
 
         &-icon {
@@ -59,5 +60,27 @@
                 color: currentColor;
             }
         }
+    }
+
+    &__title {
+        font-size: 3.14rem;
+        color: $title-color-main;
+        letter-spacing: 1.29px;
+        line-height: 1.22;
+        text-align: left;
+        font-weight: 900;
+        text-transform: uppercase;
+        margin-bottom: 0.5em;
+    }
+
+    &__col--right &__title {
+        color: $title-color-secondary;
+    }
+
+    &__sub-title {
+        font-size: 1.428rem;
+        letter-spacing:0.75px;
+        margin-bottom: 2em;
+        min-height: 3.25em;
     }
 }

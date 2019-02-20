@@ -1,11 +1,11 @@
-//Project Reset
 @import "_core/reset.scss";
 @import "_core/variables.scss";
+@import "_core/mixins.scss";
 @import "_core/base.scss";
 
 //Fonts include
 @import "fonts/fonts.scss";
 
-//Page styles
+@import "buttons/buttons.scss";
 @import "page/page.scss";
 @import "promo/promo.scss";
