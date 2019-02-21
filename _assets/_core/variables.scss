@@ -13,6 +13,7 @@ $screen-sm-min: 758px;
 $screen-md-min: 992px;
 $screen-lg-min: 1200px;
 $screen-xl-min: 1430px;
+$screen-xl-max: $screen-xl-min - 1;
 
 //Colors
 $link-color: #5672ab;

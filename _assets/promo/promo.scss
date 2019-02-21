@@ -1,4 +1,16 @@
 .promo {
+    padding: 55px 0;
+    max-width: 345px;
+    width: auto;
+    margin: 0 auto;
+    text-align: center;
+
+    @media screen and (min-width: $screen-md-min) {
+        max-width: 100%;
+        text-align: left;
+    }
+
+
     &__row {
         display: flex;
         flex-wrap: wrap;
@@ -15,15 +27,20 @@
         display: inline-flex;
         flex-wrap: wrap;
         flex-direction: column;
-        justify-content: space-between;
+        align-items: stretch;
         position: relative;
         z-index: 2;
+
+        &:not(:last-child) {
+            margin-bottom: 30px;
+        }
 
         @media screen and (min-width: $screen-md-min) {
             flex-wrap: nowrap;
             flex-direction: row;
             width: 71.1%;
             align-items: center;
+            justify-content: space-between;
 
             &--left {
                 width: 100%;
@@ -37,28 +54,54 @@
 
         &--right {
             z-index: 1;
-            text-align: right;
+
+            @media screen and (min-width: $screen-md-min) {
+                text-align: right;
+            }
         }
     }
 
     &__text {
-        width: 330px;
-        max-width: 50%;
         flex-shrink: 0;
+        position: relative;
+        z-index: 2;
+        max-width: 90%;
+        margin: auto;
+
+        @media screen and (min-width: $screen-md-min) {
+            width: 330px;
+            max-width: 50%;
+            margin: 0;
+        }
     }
 
     &__image-wrap {
         display: block;
         max-height: 100vh;
-    }
-
-    &__col--left &__image-wrap {
-        transform: translate(-16.3%, 3.7%);
-    }
-
-    &__col--right &__image-wrap {
         order: -1;
-        transform: translate(-4.1%, 16.6%);
+        margin-bottom: -22.9%;
+
+        @media screen and (min-width: $screen-md-min) {
+            order: 0;
+            margin-bottom: 0;
+        }
+    }
+
+    &__col--right &__image {
+        transform: translateX(-4.3%) scale(0.85);
+        margin: 8px 0 -12%;
+    }
+
+    @media screen and (min-width: $screen-md-min) {
+
+        &__col--left &__image-wrap {
+            transform: translate(-16.3%, 3.7%);
+        }
+        &__col--right &__image-wrap {
+            order: -1;
+            transform: translate(-4.1%, 16.6%);
+            margin: 0;
+        }
     }
 
     &__image {
@@ -84,11 +127,15 @@
 
         &-icon {
             display: block;
-            width: 7px;
-            height: 13px;
             color: inherit;
             margin-left: 25px;
             margin-top: 2px;
+            width: 6px;
+            height: 11px;
+            @media screen and (min-width: $screen-md-min) {
+                width: 7px;
+                height: 13px;
+            }
 
             svg {
                 display: block;
@@ -100,13 +147,19 @@
     }
 
     &__title {
-        font-size: 3.14rem;
         color: $title-color-main;
-        letter-spacing: 1.29px;
         line-height: 1.22;
         font-weight: 900;
         text-transform: uppercase;
-        margin-bottom: 0.5em;
+        font-size: 2.57rem;
+        letter-spacing:1.06px;
+        margin-bottom: 0.2em;
+
+        @media screen and (min-width: $screen-md-min){
+            font-size: 3.14rem;
+            letter-spacing: 1.29px;
+            margin-bottom: 0.5em;
+        }
     }
 
     &__col--right &__title {
@@ -114,10 +167,17 @@
     }
 
     &__sub-title {
-        font-size: 1.428rem;
-        letter-spacing: 0.75px;
-        margin-bottom: 2em;
-        min-height: 3.25em;
-        line-height: 1.63;
+        font-size: 1.285rem;
+        letter-spacing:0.68px;
+        line-height:1.55;
+        margin-bottom: 1.5em;
+
+        @media screen and (min-width: $screen-md-min){
+            font-size: 1.428rem;
+            letter-spacing: 0.75px;
+            line-height: 1.63;
+            margin-bottom: 2em;
+            min-height: 3.25em;
+        }
     }
 }
