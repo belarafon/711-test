@@ -13,7 +13,9 @@ var gulp = require('gulp'),
     jsSrc = '_assets/**/*.js',
     jsLocalLibsSrc = '_assets/_js-libs/*.js',
     jsDist = 'public/js',
-    open = require("open");
+    open = require("open"),
+    gulpStylelint = require('gulp-stylelint'),
+    eslint = require('gulp-eslint');
 
 
 /* Call while working with project */
@@ -30,15 +32,23 @@ gulp.task('watch', ['css', 'js'], function () {
     gulp.watch(jsSrc, ['js']);
 });
 
+gulp.task('lint-css', function lintCssTask() {
+     return gulp
+        .src('public/**/*.css')
+        .pipe(gulpStylelint({
+            reporters: [
+                {formatter: 'string', console: true}
+            ]
+        }));
+});
+
 /* CSS production file packaging */
 gulp.task('css', function () {
-    /* Bower css libraries. You can config list of files in bower.json */
-    //var bowerCss = mainBowerFiles('**/*.css');
-
     return gulp.src('_assets/main.scss')
         .pipe(sourcemaps.init())
         .pipe(sass({
             precision: 10,
+            errLogToConsole: true,
             includePaths: require('node-bourbon').includePaths
         }).on('error', sass.logError))
         .pipe(concat('styles.min.css'))
@@ -65,6 +75,17 @@ gulp.task('cssbuild', function () {
         .pipe(gulp.dest(cssDist));
 });
 
+gulp.task('jsLint', function () {
+    return gulp.src('_assets/**.js').pipe(eslint({
+        'rules': {
+            'quotes': [1, 'single'],
+            'semi': [1, 'always']
+        }
+    }))
+        .pipe(eslint.format())
+        // Brick on failure to be super strict
+        .pipe(eslint.failOnError());
+});
 
 /* JS production file packaging */
 gulp.task('js', function () {
