@@ -1,6 +1,6 @@
 var gulp = require('gulp'),
     minifyCss = require('gulp-clean-css'),
-    sass = require('gulp-sass');
+    sass = require('gulp-sass'),
     combineMq = require('gulp-combine-mq'),
     autoprefixer = require('gulp-autoprefixer'),
     jsmin = require('gulp-uglify'),
@@ -12,7 +12,8 @@ var gulp = require('gulp'),
     cssDist = 'public/css',
     jsSrc = '_assets/**/*.js',
     jsLocalLibsSrc = '_assets/_js-libs/*.js',
-    jsDist = 'public/js';
+    jsDist = 'public/js',
+    open = require("open");
 
 
 /* Call while working with project */
@@ -97,4 +98,9 @@ gulp.task('libs', function () {
         .pipe(concat('vendor.min.js'))
         .pipe(jsmin())
         .pipe(gulp.dest(jsDist));
+});
+
+/* Opens index.html in browser  */
+gulp.task('start', function () {
+    open("index.html");
 });

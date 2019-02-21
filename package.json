@@ -13,10 +13,12 @@
 		"gulp-uglify": "^1.5.3",
 		"main-bower-files": "^2.13.1",
 		"node-bourbon": "^4.2.8",
-		"run-sequence": "^1.2.1"
+		"run-sequence": "^1.2.1",
+		"open": "^0.0.5"
 	},
 	"scripts": {
-		"postinstall": "bower install"
+		"postinstall": "bower install",
+		"start": "gulp start"
 	},
 	"dependencies": {
 		"gulp-install": "^1.1.0"
