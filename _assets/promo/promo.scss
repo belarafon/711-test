@@ -67,12 +67,14 @@
         transition: 0.2s all ease;
         transform-origin: top center;
 
-        &.focused {
-            transform: scale(1.01);
-        }
+        @media screen and (min-width: $screen-md-min) {
+            &.focused {
+                transform: scale(1.01);
+            }
 
-        &.blured {
-            filter: blur(2px);
+            &.blured {
+                filter: blur(2px);
+            }
         }
     }
 
