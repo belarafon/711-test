@@ -11,7 +11,7 @@
     }
 
     &__col {
-        width: 50%;
+        width: 100%;
         display: inline-flex;
         flex-wrap: wrap;
         flex-direction: column;
@@ -22,6 +22,13 @@
         @media screen and (min-width: $screen-md-min) {
             flex-wrap: nowrap;
             flex-direction: row;
+            width: 71.1%;
+            align-items: center;
+
+            &--left {
+                width: 100%;
+                margin-right: -34.4%;
+            }
         }
 
         &--left {
@@ -34,12 +41,34 @@
         }
     }
 
+    &__text {
+        width: 330px;
+        max-width: 50%;
+        flex-shrink: 0;
+    }
+
     &__image {
         display: block;
+        max-height: 100vh;
+
+        img {
+            display: block;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    &__col--left &__image {
+        transform: translate(-16.3%, 3.7%);
+
+
     }
 
     &__col--right &__image {
         order: -1;
+        transform: translate(-4.1%, 16.6%);
+
+
     }
 
     &__btn {
@@ -48,10 +77,11 @@
 
         &-icon {
             display: block;
-            width: 6px;
-            height: 10px;
+            width: 7px;
+            height: 13px;
             color: inherit;
             margin-left: 25px;
+            margin-top: 2px;
 
             svg {
                 display: block;
@@ -67,7 +97,6 @@
         color: $title-color-main;
         letter-spacing: 1.29px;
         line-height: 1.22;
-        text-align: left;
         font-weight: 900;
         text-transform: uppercase;
         margin-bottom: 0.5em;
@@ -79,8 +108,9 @@
 
     &__sub-title {
         font-size: 1.428rem;
-        letter-spacing:0.75px;
+        letter-spacing: 0.75px;
         margin-bottom: 2em;
         min-height: 3.25em;
+        line-height: 1.63;
     }
 }
