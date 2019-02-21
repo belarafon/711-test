@@ -67,7 +67,7 @@
         transform: translate(-16.3%, 3.7%);
 
         &.focused {
-            transform: translate(-16.3%, 3.7%);
+            transform: translate(-16.3%, 3.7%) scale(1.05);
         }
     }
 
@@ -76,7 +76,7 @@
         transform: translate(-4.1%, 16.6%);
 
         &.focused {
-            transform: translate(-4.1%, 16.6%);
+            transform: translate(-4.1%, 16.6%) scale(1.05);
         }
     }
 
