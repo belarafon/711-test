@@ -6,6 +6,10 @@ Body, Html and other base styles
 
 html {
   font-size: $base-font-size;
+
+  @media screen and (min-width: $screen-md-min) and (max-width: $screen-xl-max) {
+    font-size: 0.9vw;
+  }
 }
 
 body {
