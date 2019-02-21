@@ -87,11 +87,6 @@
         }
     }
 
-    &__col--right &__image {
-        transform: translateX(-4.3%) scale(0.85);
-        margin: 8px 0 -12%;
-    }
-
     @media screen and (min-width: $screen-md-min) {
 
         &__col--left &__image-wrap {
@@ -104,15 +99,27 @@
         }
     }
 
+    &__col--right &__image {
+        transform: translateX(-4.3%) scale(0.85);
+        margin: 8px 0 -12%;
+
+        @media screen and (min-width: $screen-md-min) {
+            transform: none;
+            margin: 0;
+        }
+    }
+
     &__image {
         display: block;
         max-width: 100%;
         transition: 0.2s all ease;
         transform-origin: top center;
+        backface-visibility: hidden;
+        transform: translateZ(0) scale(1.0, 1.0);
 
         @media screen and (min-width: $screen-md-min) {
             &.focused {
-                transform: scale(1.01);
+                transform: translateZ(0) scale(1.01);
             }
 
             &.blured {
