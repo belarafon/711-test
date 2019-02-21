@@ -14,7 +14,8 @@
 		"main-bower-files": "^2.13.1",
 		"node-bourbon": "^4.2.8",
 		"run-sequence": "^1.2.1",
-		"open": "^0.0.5"
+		"open": "^0.0.5",
+		"bower": "^1.0.0"
 	},
 	"scripts": {
 		"postinstall": "bower install",
