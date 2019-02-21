@@ -1,2 +1,4 @@
 # 711-test
-test task for 711 media
+
+"npm i" to install dependencies;
+"npm run start" to fire project. 
